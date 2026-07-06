@@ -1,0 +1,302 @@
+/* ---------- Estilos globais ---------- */
+
+:root {
+  /* Paleta central do app: alterar aqui reflete em toda a interface */
+  --cor-fundo: #f1f4f9;
+  --cor-cartao: #ffffff;
+  --cor-texto: #1f2933;
+  --cor-texto-suave: #6b7a90;
+  --cor-primaria: #2563eb;
+  --cor-primaria-escura: #1e4fd1;
+  --cor-borda: #e3e8f0;
+  --cor-positivo: #15803d;
+  --cor-negativo: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* ---------- Cabeçalho e abas ---------- */
+
+.cabecalho h1 {
+  font-size: 1.6rem;
+  margin: 8px 0 16px;
+}
+
+.abas {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid var(--cor-borda);
+  margin-bottom: 24px;
+}
+
+.aba {
+  border: none;
+  background: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px; /* alinha a borda da aba com a linha de baixo */
+}
+
+.aba:hover {
+  color: var(--cor-texto);
+}
+
+.aba.ativa {
+  color: var(--cor-primaria);
+  font-weight: 600;
+  border-bottom-color: var(--cor-primaria);
+}
+
+/* ---------- Cartões (blocos brancos das telas) ---------- */
+
+.cartao {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cartao h2 {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+}
+
+/* ---------- Formulários ---------- */
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  flex: 1 1 160px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 9px 10px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  background: #fff;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 1px;
+  border-color: var(--cor-primaria);
+}
+
+.formulario button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background: var(--cor-primaria);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: var(--cor-primaria-escura);
+}
+
+/* ---------- Tabelas ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+th {
+  color: var(--cor-texto-suave);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+tfoot td {
+  font-weight: 700;
+  border-top: 2px solid var(--cor-texto);
+  border-bottom: none;
+}
+
+.direita {
+  text-align: right;
+}
+
+.positivo {
+  color: var(--cor-positivo);
+}
+
+.negativo {
+  color: var(--cor-negativo);
+}
+
+/* ---------- Etiquetas, avisos e mensagens ---------- */
+
+.etiqueta {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.etiqueta.receita {
+  background: #dcfce7;
+  color: var(--cor-positivo);
+}
+
+.etiqueta.despesa {
+  background: #fee2e2;
+  color: var(--cor-negativo);
+}
+
+.etiqueta.menor {
+  background: #fef3c7;
+  color: #92400e;
+  margin-left: 8px;
+}
+
+.botao-perigo {
+  padding: 6px 14px;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--cor-negativo);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.botao-perigo:hover {
+  background: #fee2e2;
+}
+
+.mensagem-erro {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: var(--cor-negativo);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.aviso {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 12px 0 0;
+}
+
+.vazio {
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- Modal de confirmação ---------- */
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal {
+  background: var(--cor-cartao);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+}
+
+.modal h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.modal p {
+  margin: 0 0 20px;
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.botao-neutro {
+  padding: 9px 18px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.botao-neutro:hover {
+  background: var(--cor-fundo);
+}
+
+.botao-perigo-solido {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  background: var(--cor-negativo);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao-perigo-solido:hover {
+  background: #991b1b;
+}

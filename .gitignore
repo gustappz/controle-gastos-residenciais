@@ -1,0 +1,19 @@
+# .NET (vale para a API e para o projeto de testes)
+bin/
+obj/
+
+# Banco de dados local (criado automaticamente ao rodar a API)
+*.db
+*.db-shm
+*.db-wal
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDEs e sistema operacional
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
